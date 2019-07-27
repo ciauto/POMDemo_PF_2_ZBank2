@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import pageClasses.AccountSummaryPage;
 import pageClasses.HomePage;
 import pageClasses.LoginPage;
+import pageClasses.PayBills;
 
 
 public class TestCase002_verifyAddPayee {
@@ -19,6 +20,7 @@ public class TestCase002_verifyAddPayee {
 	HomePage hp;	
 	LoginPage lp;
 	AccountSummaryPage asp;
+	PayBills pb;
 
 	
 	@BeforeMethod
@@ -27,6 +29,7 @@ public class TestCase002_verifyAddPayee {
 		driver=new ChromeDriver();
 		hp=new HomePage(driver);
 		lp=new LoginPage(driver);
+		pb=new PayBills(driver);
 		asp=new AccountSummaryPage(driver);
 		driver.get("http://zero.webappsecurity.com/");
 		driver.manage().window().maximize();
@@ -36,6 +39,10 @@ public class TestCase002_verifyAddPayee {
 	public void verifyAddPayee() {
 		hp.ClickSignIn();
 		lp.doLogin("username", "password");
+		asp.ClickPayBillsTab();
+		pb.inputPayeeInfo("CIBC", "2223 Lake Street", "23232323", "fgifogfigd");
+		pb.ClickAddBtn();
+		
 		
 		
 	}

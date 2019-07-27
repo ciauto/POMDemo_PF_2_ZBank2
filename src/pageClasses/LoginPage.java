@@ -8,9 +8,12 @@ public class LoginPage {
 	WebDriver driver;
 	//Locate web elements
 	@FindBy(id="user_login")
-	public WebElement username;
+	public WebElement usernametextfield;
+	
 	@FindBy(id="user_password")
-	public WebElement password;
+	public WebElement passwordtextfield;
+	
+	
 	@FindBy(name="submit")
 	public WebElement signIn;
 	
@@ -19,9 +22,9 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void doLogin(String myusername, String mypassword) {
-		username.sendKeys(myusername);
-		password.sendKeys(mypassword);
+	public void doLogin(String xusername, String ypassword) {
+		usernametextfield.sendKeys(xusername);
+		passwordtextfield.sendKeys(ypassword);
 		signIn.click();
 	}
 }

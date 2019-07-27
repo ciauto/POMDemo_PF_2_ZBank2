@@ -5,7 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
+	
+	
 	WebDriver driver;
+	
+	
 	//Locate web elements
 	@FindBy(id="signin_button")
 	public WebElement signInBtn;
