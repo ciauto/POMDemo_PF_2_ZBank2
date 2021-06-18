@@ -30,11 +30,12 @@ public class TestCase001_verifyLogin {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}	
+	
 	@Test
 	public void verifyLogin() {
+		
 		hp.ClickSignIn();
 		lp.doLogin("username", "password2");
-				
 		Assert.assertEquals(asp.ActualTitle, asp.ExpectedTitle);
 		
 

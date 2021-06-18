@@ -37,7 +37,8 @@ public class TestCase002_verifyAddPayee {
 		}
 	@Test
 	public void verifyAddPayee() {
-		hp.ClickSignIn();
+		
+		hp.ClickSignIn();	
 		lp.doLogin("username", "password");
 		asp.ClickPayBillsTab();
 		pb.inputPayeeInfo("CIBC", "2223 Lake Street", "23232323", "fgifogfigd");
